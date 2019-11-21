@@ -1,0 +1,58 @@
+{
+  "name": "egg-proxifier",
+  "version": "1.0.0",
+  "description": "Request proxy middleware for egg framework.based on http-proxy",
+  "main": "index.js",
+  "scripts": {
+    "semantic-release": "semantic-release",
+    "test": "nyc mocha",
+    "coverage": "nyc report --reporter=lcov --reporter=html && codecov -f .nyc_output/*.json",
+    "lint": "eslint index.js --fix"
+  },
+  "keywords": [
+    "egg",
+    "egg-proxy",
+    "proxy-middleware"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SliverYuki/egg-proxifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SliverYuki/egg-proxifier/issues"
+  },
+  "author": "Adrian Lee",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint index.js --fix"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.0",
+    "path-match": "^1.2.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "codecov": "^3.6.1",
+    "egg": "^2.25.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "semantic-release": "^15.13.31",
+    "sinon": "^7.5.0"
+  }
+}
