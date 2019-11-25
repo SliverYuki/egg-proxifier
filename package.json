@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Request proxy middleware for egg framework.based on http-proxy",
   "main": "index.js",
+  "engines": {
+    "node": ">=10.16.0"
+  },
   "scripts": {
     "semantic-release": "semantic-release",
-    "test": "nyc mocha",
+    "test": "nyc mocha --exit",
     "coverage": "nyc report --reporter=lcov --reporter=html && codecov -f .nyc_output/*.json",
-    "lint": "eslint index.js --fix"
+    "lint": "eslint index.js test/ --fix"
   },
   "keywords": [
     "egg",
@@ -30,7 +33,7 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint index.js --fix"
+    "*.js": "eslint index.js test/ --fix"
   },
   "dependencies": {
     "http-proxy": "^1.18.0",
@@ -43,11 +46,13 @@
     "chai-http": "^4.3.0",
     "codecov": "^3.6.1",
     "egg": "^2.25.0",
+    "egg-mock": "^3.24.2",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
+    "express": "^4.17.1",
     "husky": "^3.1.0",
     "lint-staged": "^9.4.3",
     "mocha": "^6.2.2",
