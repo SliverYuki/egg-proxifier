@@ -7,6 +7,9 @@ const route = pathMatch({
   strict: false,
   end: false,
 })
+const logger = ctx => {
+  ctx.app.logger('%s - %s %s with headers %s', new Date().toLocaleString(), ctx.req.method, ctx.req.url, ctx.req.headers)
+}
 
 let eventRegistered = false
 
@@ -15,6 +18,7 @@ let eventRegistered = false
  * @param {Object} options - 配置项，参考 https://github.com/http-party/node-http-proxy/blob/master/README.md#options
  * @param {function} options.rewrite - 参数为 path，用于对 path 进行操作
  * @param {Object}  options.events - proxy 事件，key 值为事件名,参考 https://github.com/http-party/node-http-proxy/blob/master/README.md#listening-for-proxy-events
+ * @param {boolean} options.log - 是否开启日志打印
  */
 module.exports = (path, options) => (ctx, next) => {
   const match = route(path)
@@ -26,7 +30,9 @@ module.exports = (path, options) => (ctx, next) => {
     opts = options.call(options, params)
   }
 
-  const { rewrite, events } = opts
+  const { log, rewrite, events } = opts
+
+  if (log) logger(ctx)
 
   const httpProxyOpts = Object.keys(opts)
     .filter(n => ['rewrite', 'events'].indexOf(n) < 0)

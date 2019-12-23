@@ -18,6 +18,7 @@ Supports all of [http-proxy options](https://github.com/http-party/node-http-pro
 
 **NOTE:**
 `options.rewrite` - function, rewrite the `path`
+`options.log` - boolean, print a log message
 
 ### http-proxy events
 Supports all of [http-proxy events](https://github.com/http-party/node-http-proxy/blob/master/README.md#listening-for-proxy-events)
