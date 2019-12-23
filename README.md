@@ -17,6 +17,7 @@ $ npm install koa-proxies --save
 Supports all of [http-proxy options](https://github.com/http-party/node-http-proxy/blob/master/README.md#options)
 
 **NOTE:**
+
 `options.rewrite` - function, rewrite the `path`
 
 `options.log` - boolean, print a log message
