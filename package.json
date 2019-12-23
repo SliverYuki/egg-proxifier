@@ -1,6 +1,6 @@
 {
   "name": "egg-proxifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Request proxy middleware for egg framework.based on http-proxy",
   "main": "index.js",
   "files": [
