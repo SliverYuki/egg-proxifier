@@ -9,7 +9,7 @@ Style Guide [Airbnb JavaScript Style Guide() {](https://github.com/airbnb/javasc
 ## Installation
 
 ```bash
-$ npm install koa-proxies --save
+$ npm install egg-proxifier --save
 ```
 
 ## Options
