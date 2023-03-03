@@ -62,7 +62,7 @@
     "lint-staged": "^9.5.0",
     "mocha": "^10.2.0",
     "nyc": "^14.1.1",
-    "semantic-release": "^17.2.3",
+    "semantic-release": "^19.0.3",
     "sinon": "^7.5.0"
   }
 }
