@@ -45,7 +45,7 @@
     "path-match": "^1.2.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
+    "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^8.2.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
